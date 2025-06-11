@@ -1,7 +1,7 @@
 dstack
 ========
 
-`dstack <https://dstack.ai/>`__ is an open-source alternative to Kubernetes and Slurm, designed to simplify GPU allocation and AI workload orchestration for ML teams across top clouds, on-prem clusters, and accelerators.
+`dstack <https://github.com/dstackai/dstack>`__ is an open-source alternative to Kubernetes and Slurm, designed to simplify GPU allocation and AI workload orchestration for ML teams across top clouds, on-prem clusters, and accelerators.
 
 Prerequisites
 ----------------
@@ -57,30 +57,43 @@ Go ahead and apply the service configuration:
 Access the Service
 --------------------
 
-After the service is successfully deployed, you can access the service's endpoint at ``<dstack server URL>/proxy/services/<project name>/<run name>/``
+After the service is successfully deployed, you can access the service's endpoint in the following ways:
 
-.. code:: bash
+.. tab-set::
 
-    curl http://localhost:3000/proxy/services/main/qwen3-30b-a3b/v1/chat/completions \
-        -H 'Content-Type: application/json' \
-        -H 'Authorization: Bearer <dstack token>' \
-        -d '{
-            "model": "Qwen/Qwen3-30B-A3B",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "Compose a poem that explains the concept of recursion in programming."
-                }
-            ]
-    }'
+    .. tab-item:: CURL
+       
+      Access through service endpoint at ``<dstack server URL>/proxy/services/<project name>/<run name>/``
 
-.. note::
-   When starting the dstack server, an admin token is automatically generated:
+      .. code:: bash
 
-   .. code:: bash 
+            curl http://localhost:3000/proxy/services/main/qwen3-30b-a3b/v1/chat/completions \
+                -H 'Content-Type: application/json' \
+                -H 'Authorization: Bearer <dstack token>' \
+                -d '{
+                    "model": "Qwen/Qwen3-30B-A3B",
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": "Compose a poem that explains the concept of recursion in programming."
+                        }
+                    ]
+            }'
 
-    The admin token is "bbae0f28-d3dd-4820-bf61-8f4bb40815da"
-    The server is running at http://127.0.0.1:3000/
+      .. note::
+          When starting the dstack server, an admin token is automatically generated:
+
+          .. code:: bash 
+
+              The admin token is "bbae0f28-d3dd-4820-bf61-8f4bb40815da"
+              The server is running at http://127.0.0.1:3000/
+
+    .. tab-item:: Chat UI
+
+       Access through dstack's Chat UI at ``<dstack server URL>/projects/<project name>/models/<run name>/``
+
+       .. image:: https://dstack.ai/static-assets/static-assets/images//dstack-qwen-ui.png
+
 
 .. dropdown:: Gateway
     :icon: info
@@ -141,8 +154,7 @@ Below is a complete configuration example with auto-scaling enabled:
 
 What's Next?
 ------------
-- **SSH Fleets**: Add your on-prem GPU cluster or pre-provisioned GPU VMs by simply providing hostnames and SSH credentials. Learn more about `SSH fleets <https://dstack.ai/docs/concepts/fleets/#ssh>`__.
-- **Cloud Backends**: Integrate with top GPU cloud providers, streamline the provisioning and allocation of cloud GPUs and high-performance interconnected clusters through a unified interface. `Explore Backends <https://dstack.ai/docs/concepts/backends/>`__.
 - **Dev Environments**: Experiment with Dev Enviroments to make iterative development and testing seamless before deploying to production. Set up `Dev Environments <https://dstack.ai/docs/concepts/dev-environments/>`__.
 - **Tasks**: Schedule training jobs or any other AI workloads on optimized clusters or individual instances. Learn about `Tasks <https://dstack.ai/docs/concepts/tasks/>`__.
+- **Services**: Deploy models as secure, auto-scaling OpenAI-compatible endpoints using your custom code, Docker images, and serving frameworks. Learn more about `Services <https://dstack.ai/docs/concepts/services/>`__.
 - **Metrics**: Monitor performance with automatically tracked metrics accessible via CLI and UI. Explore `Metrics <https://dstack.ai/docs/guides/metrics/>`__.
