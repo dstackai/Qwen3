@@ -152,9 +152,10 @@ Below is a complete configuration example with auto-scaling enabled:
 .. note::
    The scaling property requires a gateway to be set up.
 
-What's Next?
+See also
 ------------
-- **Dev Environments**: Experiment with Dev Enviroments to make iterative development and testing seamless before deploying to production. Set up `Dev Environments <https://dstack.ai/docs/concepts/dev-environments/>`__.
-- **Tasks**: Schedule training jobs or any other AI workloads on optimized clusters or individual instances. Learn about `Tasks <https://dstack.ai/docs/concepts/tasks/>`__.
-- **Services**: Deploy models as secure, auto-scaling OpenAI-compatible endpoints using your custom code, Docker images, and serving frameworks. Learn more about `Services <https://dstack.ai/docs/concepts/services/>`__.
-- **Metrics**: Monitor performance with automatically tracked metrics accessible via CLI and UI. Explore `Metrics <https://dstack.ai/docs/guides/metrics/>`__.
+- **Fleets**: Create cloud and on-prem clusters using `Fleets <https://dstack.ai/docs/concepts/fleets/>`__.
+- **Dev Environments**: Experiment and test before deploying to production using `Dev Environments <https://dstack.ai/docs/concepts/dev-environments/>`__.
+- **Tasks**: Schedule single node or distributed training using `Tasks <https://dstack.ai/docs/concepts/tasks/>`__.
+- **Services**: Deploy models as secure, auto-scaling OpenAI-compatible endpoints using `Services <https://dstack.ai/docs/concepts/services/>`__.
+- **Metrics**: Monitor performance with automatically tracked metrics via CLI or UI using `Metrics <https://dstack.ai/docs/guides/metrics/>`__.
